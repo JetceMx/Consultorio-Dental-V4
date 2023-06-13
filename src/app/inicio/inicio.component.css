@@ -1,0 +1,98 @@
+.contenedor {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+}
+
+.servicios {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    margin: 15px;
+}
+
+.promocion {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: left;
+}
+
+.titulo-oferta {
+    font-size: 20px;
+}
+
+.contenedor-servicios,
+.contenedor-ayuda,
+.contenedor-ofertas,
+.contenedor-empresa,
+.contenedor-video {
+    padding: 10px;
+}
+
+.contenedor-empresa {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.contenedor-empresa>img {
+    width: 50%;
+    height: 350px;
+    margin: 15px;
+}
+
+.informacion {
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: left;
+    align-items: left;
+    width: 35%;
+}
+
+
+.informacion>h2,
+.contenedor-servicios>h2,
+.contenedor-ofertas>h2,
+.contenedor-video {
+    color: #0D6EFD;
+}
+
+.contenedor-ayuda {
+    clip-path: polygon(0 20%, 100% 0, 100% 80%, 0 100%);
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/Consultorio.jpg');
+    background-position: center;
+    background-repeat: no-repeat, repeat;
+    background-size: cover;
+    color: white;
+}
+
+.contenedor-video {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin: 0 auto;
+}
+
+hr {
+    width: 100%;
+    border-top: 5px solid #091931c2;
+}
+
+.iconos {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}

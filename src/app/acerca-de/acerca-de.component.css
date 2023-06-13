@@ -1,0 +1,92 @@
+body{
+    justify-content: center;
+    text-align: center;
+}
+h2,h3{
+    color: #0D6EFD;
+}
+
+nav{
+    padding-left: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.example-card {
+    max-width: 390px;
+  }
+  
+  .example-header-image {
+    background-image: url('../../assets/images/Kike.jpg');
+    background-size: cover;
+  }
+
+  .example-card2 {
+    max-width: 390px;
+  }
+  
+  .example-header-image2 {
+    background-image: url('../../assets/images/Mannu.jpg');
+    background-size: cover;
+  }
+
+  .example-card3 {
+    max-width: 390px;
+  }
+  
+  .example-header-image3 {
+    background-image: url('../../assets/images/Sebas.jpg');
+    background-size: cover;
+  }
+
+  .example-card4 {
+    max-width: 390px;
+  }
+  
+  .example-header-image4 {
+    background-image: url('../../assets/images/Yo.jpg');
+    background-size: cover;
+  }
+
+  :host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .demo-section + .demo-section {
+    margin-top: 16px;
+  }
+
+  section {
+    display: table;
+  }
+  
+  .example-label {
+    display: table-cell;
+    font-size: 14px;
+    margin-left: 8px;
+    min-width: 120px;
+  }
+  
+  .example-button-row {
+    display: table-cell;
+    max-width: 600px;
+  }
+  
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 120px;
+  }

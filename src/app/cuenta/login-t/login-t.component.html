@@ -1,0 +1,21 @@
+<h2>Login de usuario</h2>
+<form [formGroup]="LoginT" (ngSubmit)="loginT()">
+    <div class="mb-3">
+        <label class="form-label">Telefono</label>
+        <input type="text" class="form-control" formControlName="telefono">
+    </div>
+    <div class="mb-3" id="rec-container">
+
+    </div>
+    <input type="submit" value="Enviar">
+</form>
+
+<form [formGroup]="LoginT2" (ngSubmit)="ValiC()">
+  <div class="mb-3">
+    <label class="form-label">Codigo</label>
+    <input type="text" class="form-control" formControlName="codigo">
+  </div>
+  <input type="submit" value="Enviar">
+</form>
+
+

@@ -1,0 +1,62 @@
+body {
+  font-family: 'Avenir Next', sans-serif;
+  background: #191D21;
+  font-weight: 300;
+  font-size: 14px;
+  padding: 20px;
+}
+
+.titulos {
+  font-size: 60px;
+}
+
+.masonryholder {
+  column-count: 4;
+  column-gap: 20px;
+  max-width: 1600px;
+  margin: 0 auto;
+  min-height: calc(80vh - 70px);
+}
+
+.masonryblocks {
+  display: inline-block;
+  background: #ebeded;
+  padding: 20px;
+  margin: 0 0 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.masonryblocks img {
+  width: 100%;
+}
+
+@media screen and (max-width:768px) {
+  .masonryholder {
+    column-count: 1;
+  }
+}
+
+@media screen and (min-width:769px) {
+  .masonryholder {
+    column-count: 2;
+  }
+}
+
+@media screen and (min-width:980px) {
+  .masonryholder {
+    column-count: 3;
+  }
+}
+
+@media screen and (min-width:1100px) {
+  .masonryholder {
+    column-count: 4;
+  }
+}
+
+@media screen and (min-width:1200px) {
+  .masonryholder {
+    column-count: 5;
+  }
+}

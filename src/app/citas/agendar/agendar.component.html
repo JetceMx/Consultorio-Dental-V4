@@ -1,0 +1,115 @@
+<br>
+<h4 style="text-align:center">Agendar Cita</h4>
+<hr>
+<form [formGroup]="forma" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+    <div class="container">
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Nombre(s)</label>
+            <div class="col-8">
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}"
+                    placeholder="Nombre" formControlName="nombre">
+                <div *ngIf="forma.controls['nombre'].errors?.['required']" class="invalidfeedback">
+                    Ingresa tu nombre
+                </div>
+                <div *ngIf="forma.controls['nombre'].errors?.['minlength']" class="invalid-feedback">
+                    Por lo menos tres caracteres
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Apellidos</label>
+            <div class="col-8">
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('apellidos')?.valid}"
+                    placeholder="Apellidos" formControlName="apellidos">
+                <div *ngIf="forma.controls['apellidos'].errors?.['required']" class="invalidfeedback">
+                    Ingresa tus apellidos
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Edad</label>
+            <div class="col-8">
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('edad')?.valid}"
+                    placeholder="Edad" formControlName="edad">
+                <div *ngIf="forma.controls['edad'].errors?.['required']" class="invalidfeedback">
+                    Ingresa tu edad
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Teléfono</label>
+            <div class="col-8">
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('telefono')?.valid}"
+                    placeholder="Teléfono" formControlName="telefono">
+                <div *ngIf="forma.controls['telefono'].errors?.['required']" class="invalidfeedback">
+                    Ingresa tu teléfono
+                </div>
+                <div *ngIf="forma.controls['telefono'].errors?.['minlength']" class="invalid-feedback">
+                    Ingresa los 10 digitos de tu número
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Correo</label>
+            <div class="col-8">
+                <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text"
+                    placeholder="example@gmail.com" formControlName="correo">
+                <div *ngIf="forma.controls['correo'].errors?.['required']" class="invalidfeedback">
+                    Correo obligatorio
+                </div>
+                <div *ngIf="forma.controls['correo'].errors?.['email']" class="invalid-feedback">
+                    El correo no tiene el formato correcto
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <!-- Fecha -->
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Fecha de la cita</label>
+            <div class="col-8">
+                <input class="form-control" type="date" [min]="fechaStrMinima" formControlName="fecha">
+            </div>
+        </div>
+        <!-- Fecha -->
+
+        <br>
+
+        <!-- Hora -->
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Hora de la cita</label>
+            <div class="col-8">
+                <input class="form-control" type="time" [ngClass]="{'is-invalid':!forma.get('hora')?.valid}" min="13:00"
+                    max="20:00" step="3600" formControlName="hora">
+                <div *ngIf="forma.controls['hora'].errors?.['this.validacionDeHora']" class="invalid-feedback">
+                    Solo trabajamos de la 01:00 p.m. hasta las 8:00 p.m.
+                </div>
+            </div>
+        </div>
+        <!-- Hora -->
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">&nbsp;</label>
+            <div class="input-group col-md-8">
+                <button type="submit" class="btn btn-outline-primary" [disabled]="forma.invalid">
+                    Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+</form>
+<br>

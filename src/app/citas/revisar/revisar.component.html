@@ -1,0 +1,34 @@
+<p class="text-center titulos" style="color:#E83F6C; font-size: 30px;" >Citas Programadas</p>
+<div class="container">
+  <input type="text" class="form-control text-center" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
+  <table class="table">
+   <!---- <div *ngIf="! cita.length">No hay clientes por el momento</div>-->
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellidos</th>
+        <th scope="col">Edad</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Hora</th>
+        <th scope="col">Telefono</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Borrar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of cita | filtro:filterPost">
+        <td scope="row">{{cita.nombre}}</td>
+        <td>{{cita.apellidos}}</td>
+        <td>{{cita.edad}}</td>
+        <td>{{cita.fecha}}</td>
+        <td>{{cita.hora}}</td>
+        <td>{{cita.telefono}}</td>
+        <td>{{cita.correo}}</td>
+        <td>
+          <button class="btn btn-outline-danger" (click)="onClickDelete(cita)">Borrar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+

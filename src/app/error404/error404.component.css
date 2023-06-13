@@ -1,0 +1,27 @@
+.cont{
+    display: flex;
+    background-color: #7abdd1;
+}
+.img1{
+    width: 420px;
+    height: 350px;
+}
+.contenedor-opciones {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 70%;
+    padding: 15px;
+    justify-content: center;
+    min-height: calc(80vh - 70px);
+    margin: 15px;
+}
+.contenedor-opciones>button {
+    
+    background-color: #2c7df7c2;
+    margin: 15px;
+}
+
+.contenedor-opciones>button:hover {
+    background-color:#E83F6C;
+}
