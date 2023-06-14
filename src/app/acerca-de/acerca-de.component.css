@@ -1,12 +1,14 @@
-body{
+body {
     justify-content: center;
     text-align: center;
 }
-h2,h3{
+
+h2,
+h3 {
     color: #0D6EFD;
 }
 
-nav{
+nav {
     padding-left: 10px;
     display: flex;
     flex-wrap: wrap;
@@ -15,78 +17,110 @@ nav{
 
 .example-card {
     max-width: 390px;
-  }
-  
-  .example-header-image {
+}
+
+.example-header-image {
     background-image: url('../../assets/images/Kike.jpg');
     background-size: cover;
-  }
+}
 
-  .example-card2 {
+.example-card2 {
     max-width: 390px;
-  }
-  
-  .example-header-image2 {
+}
+
+.example-header-image2 {
     background-image: url('../../assets/images/Mannu.jpg');
     background-size: cover;
-  }
+}
 
-  .example-card3 {
+.example-card3 {
     max-width: 390px;
-  }
-  
-  .example-header-image3 {
+}
+
+.example-header-image3 {
     background-image: url('../../assets/images/Sebas.jpg');
     background-size: cover;
-  }
+}
 
-  .example-card4 {
+.example-card4 {
     max-width: 390px;
-  }
-  
-  .example-header-image4 {
+}
+
+.example-header-image4 {
     background-image: url('../../assets/images/Yo.jpg');
     background-size: cover;
-  }
+}
 
-  :host {
+ :host {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-  }
-  
-  .demo-section + .demo-section {
-    margin-top: 16px;
-  }
+}
 
-  section {
+.demo-section+.demo-section {
+    margin-top: 16px;
+}
+
+section {
     display: table;
-  }
-  
-  .example-label {
+}
+
+.example-label {
     display: table-cell;
     font-size: 14px;
     margin-left: 8px;
     min-width: 120px;
-  }
-  
-  .example-button-row {
+}
+
+.example-button-row {
     display: table-cell;
     max-width: 600px;
-  }
-  
-  .example-button-row .mat-mdc-button-base {
+}
+
+.example-button-row .mat-mdc-button-base {
     margin: 8px 8px 8px 0;
-  }
-  
-  .example-flex-container {
+}
+
+.example-flex-container {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-  }
-  
-  .example-button-container {
+}
+
+.example-button-container {
     display: flex;
     justify-content: center;
     width: 120px;
-  }
+}
+
+.floating-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+    opacity: 0.3;
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100%;
+    background-color: white;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    transform: translateX(0);
+}
+
+#btnAccesibilidad {
+    background-color: white;
+}
+
+.sidebar-content {
+    display: flex;
+    justify-content: center;
+}
