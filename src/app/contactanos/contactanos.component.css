@@ -22,4 +22,33 @@
   flex-direction: column;
 }
 
+.footer{
+  width:90%;
+	max-width:1000px;
+	margin:20px auto;
+	background:#024959;
+}
+
+.in-flex{
+  width:100%;
+}
+
+.home{
+  width: 100%;
+}
+
+@media (min-width: 400px) {
+  .in-flex{
+    width: 91%;
+    height: 100%;
+  }
+  .footer{
+    width:80%;
+		height:100%;
+		left:-100%;
+		margin:0;
+		position: fixed;
+  }
+}
+
 

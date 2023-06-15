@@ -1,8 +1,13 @@
 .contenedor {
-    margin: 0 auto;
+    margin: auto;
     width: 80%;
     display: flex;
     flex-direction: row;
+}
+
+.img{
+  width: 100%;
+  height: auto;
 }
 
 .servicios {
@@ -96,3 +101,26 @@ hr {
     flex-direction: column;
     margin: 10px;
 }
+
+*{
+  padding: 0px;
+  margin: 0px;
+}
+
+.home{
+  display: flex;
+  flex-wrap: wrap;
+  width:100%;
+}
+
+.in-flex{
+  width:100%;
+}
+
+@media (max-width: 420px) {
+  .in-flex{
+    width: 91%;
+    height: 100%;
+  }
+}
+
