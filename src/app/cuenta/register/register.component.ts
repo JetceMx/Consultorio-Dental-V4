@@ -4,7 +4,7 @@ import { Router } from '@angular/router';
 import { UsuariosService } from '../../usuarios.service';
 import { Auth, updateCurrentUser, user } from '@angular/fire/auth';
 import { LocalCitasService } from 'src/app/citas/local-citas.service';
-import {Firestore, collection,addDoc } from '@angular/fire/firestore';
+import {Firestore, collection,addDoc, doc,setDoc } from '@angular/fire/firestore';
 
 @Component({
   selector: 'app-register',
@@ -21,7 +21,8 @@ export class RegisterComponent {
   ) {
     this.formReg = new FormGroup({
       email: new FormControl(),
-      password: new FormControl()
+      password: new FormControl(),
+      name: new FormControl()
     })
   }
 
@@ -31,13 +32,14 @@ export class RegisterComponent {
 
   onSubmit() {
     this.userService.register(this.formReg.value)
-      .then(response => {
+      .then(async response => {
         console.log(response);
-        /*const ruta = "Usuarios";
+        const ruta = "Usuarios";
         let id1 = response.user.uid;
-        const usrRef= collection(this.firestore,ruta,id1);
+        console.log(response.user.uid)
+        await setDoc(doc(this.firestore, ruta, id1), this.formReg.value);
 
-       addDoc(usrRef,this.formReg.value);*/
+      
         this.router.navigate(['Cuenta/loginE']);
       })
       .catch(error => console.log(error));
