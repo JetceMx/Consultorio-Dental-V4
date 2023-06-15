@@ -43,6 +43,9 @@
             <div *ngIf="formReg.controls['passwordVer'].errors?.['required']" class="invalidfeedback">
                 Vuelve a ingresar tu contraseña
             </div>
+            <div *ngIf="formReg.hasError('passwordMismatch')" class="invalid-feedback">
+                Las contraseñas deben ser iguales
+            </div>
         </div>
     </div>
     <button type="submit" class="btn btn-outline-primary" [disabled]="formReg.invalid">
