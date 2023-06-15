@@ -40,6 +40,7 @@ import { RegisterComponent } from './cuenta/register/register.component';
 import { provideAuth,getAuth } from '@angular/fire/auth';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -59,7 +60,7 @@ import { LoginTComponent } from './cuenta/login-t/login-t.component';
     FiltroPipe,
     Error404Component,
     PadreComponent,
-    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent
+    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent, LoadingComponent
   ],
   imports: [
     BrowserModule,
