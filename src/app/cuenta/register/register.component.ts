@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from '../../usuarios.service';
+import { AlertifyService } from 'src/app/alertify.service';
 
 @Component({
   selector: 'app-register',
@@ -11,13 +12,15 @@ import { UsuariosService } from '../../usuarios.service';
 export class RegisterComponent {
   formReg: FormGroup;
 
-  constructor(
+  constructor(private alerta: AlertifyService,
     private userService:UsuariosService,
     private router: Router
   ) {
     this.formReg = new FormGroup({
-      email: new FormControl(),
-      password: new FormControl()
+      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      correo: new FormControl('', [Validators.required, Validators.email]),
+      password: new FormControl('', [Validators.required, Validators.minLength(8)]),
+      passwordVer: new FormControl('', [Validators.required,])
     })
   }
 
@@ -32,4 +35,6 @@ export class RegisterComponent {
       })
       .catch(error => console.log(error));
   }
+
+
 }
