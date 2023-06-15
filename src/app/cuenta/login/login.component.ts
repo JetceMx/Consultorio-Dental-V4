@@ -27,7 +27,7 @@ export class LoginComponent {
   }
 
   ngOnInit(): void {
-   
+
   }
 
   onSubmit() {
@@ -36,6 +36,7 @@ export class LoginComponent {
         console.log(response);
       })
       .catch(error => console.log(error));
+      
   }
 
 
