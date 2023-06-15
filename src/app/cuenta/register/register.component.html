@@ -1,11 +1,19 @@
 <h2>Registro de usuario</h2>
 <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-        <label class="form-label">Email</label>
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Apellido</label>
+        <input type="text" class="form-control" formControlName="lastname">
+    </div>
+    <div class="mb-3">
+        <label class="form-label">Correo</label>
         <input type="text" class="form-control" formControlName="email">
     </div>
     <div class="mb-3">
-        <label class="form-label">Password</label>
+        <label class="form-label">Contraseña</label>
         <input type="password" class="form-control" formControlName="password">
     </div>
     <input type="submit" value="Enviar">
