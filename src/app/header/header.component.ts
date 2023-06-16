@@ -5,7 +5,7 @@ import { Injectable } from '@angular/core';
 import { citasInterface } from '../citas/local-citas.model';
 import { LocalCitasService } from '../citas/local-citas.service';
 
-@Injectable ({providedIn:'root'})
+@Injectable({ providedIn: 'root' })
 
 @Component({
   selector: 'app-header',
@@ -13,30 +13,33 @@ import { LocalCitasService } from '../citas/local-citas.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  cita:citasInterface[];
+  cita: citasInterface[];
   filterPost = '';
 
   constructor(
     private userService: UsuariosService,
     private router: Router, private citasService: LocalCitasService
-    
-  ) { this.cita=[{
-    nombre: "Juan",
-    apellidos: "Teran",
-    edad: "20",
-    telefono: "4444",
-    correo: "13@gmail.com",
-    fecha: "11-12-2023",
-    hora: "14-23",
-  }]
-}
+
+  ) {
+    this.cita = [{
+      nombre: "Juan",
+      apellidos: "Teran",
+      edad: "20",
+      telefono: "4444",
+      correo: "13@gmail.com",
+      fecha: "11-12-2023",
+      hora: "14-23",
+      tipoCita: "",
+      sucursal: ""
+    }]
+  }
 
 
   ngOnInit(): void {
-      this.citasService.getregis().subscribe(cita =>{
-        console.log(cita);
-        this.cita=cita;
-      })
+    this.citasService.getregis().subscribe(cita => {
+      console.log(cita);
+      this.cita = cita;
+    })
   }
 
   onClick() {
