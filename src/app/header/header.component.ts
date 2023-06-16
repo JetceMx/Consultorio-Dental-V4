@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from '../usuarios.service';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras} from '@angular/router';
 import { Injectable } from '@angular/core';
 import { citasInterface } from '../citas/local-citas.model';
 import { LocalCitasService } from '../citas/local-citas.service';
@@ -15,6 +15,7 @@ import { LocalCitasService } from '../citas/local-citas.service';
 export class HeaderComponent {
   cita:citasInterface[];
   filterPost = '';
+  parametro:string=""
 
   constructor(
     private userService: UsuariosService,
@@ -45,5 +46,12 @@ export class HeaderComponent {
         this.router.navigate(['Cuenta/regisE']);
       })
       .catch(error => console.log(error));
+  }
+  Buscar(){
+    const navigationExtras: NavigationExtras={
+      queryParams: { parametro: this.parametro}
+    }
+    this.router.navigateByUrl('/busqueda',navigationExtras)
+    console.log(this.parametro)
   }
 }

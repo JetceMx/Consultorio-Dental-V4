@@ -12,6 +12,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { RegisterComponent } from './cuenta/register/register.component';
 import { LoginComponent } from './cuenta/login/login.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
+import { BusquedaComponent } from './busqueda/busqueda.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -27,6 +28,7 @@ const routes: Routes = [
   { path: 'Cuenta/loginE', component: LoginComponent },
   { path: 'Cuenta/loginE', component: LoginComponent },
   { path: 'Cuenta/loginT', component: LoginTComponent },
+  {path:  'busqueda', component: BusquedaComponent},
   { path: '**', component: Error404Component }
 ];
 

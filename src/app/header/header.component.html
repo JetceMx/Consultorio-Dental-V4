@@ -50,8 +50,8 @@
               </li>
               </ul>
               <form class="d-flex" role="search">
-                <input type="text" class="form-control text-center" name="filterPost" placeholder="Search..." [(ngModel)]="filterPost">
-                  <button class="btn btn-outline-success" type="submit">Buscar</button>
+                <input type="text" class="form-control text-center" name="filterPost" placeholder="Search..." [(ngModel)]="parametro">
+                  <button class="btn btn-outline-success" (click)="Buscar()">Buscar</button>
               </form>
           </div>
       </div>
