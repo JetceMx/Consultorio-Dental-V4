@@ -13,7 +13,7 @@ export class AppComponent implements OnInit{
     this.showLoading = true;
   }
 
-  AfterViewInit(){
+  ngAfterViewInit(){
     this.showLoading = false;
   }
 }

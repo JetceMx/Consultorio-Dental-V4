@@ -1,5 +1,11 @@
-body {
-    display: flex;
-    flex: auto;
-    align-content: center;
+h1 {
+    color: #0D6EFD
+}
+
+.containerloading {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
