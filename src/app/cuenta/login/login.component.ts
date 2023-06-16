@@ -4,8 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 import { UsuariosService } from 'src/app/usuarios.service';
 import { getAuth } from "firebase/auth";
-
-
+import { AlertifyService } from 'src/app/alertify.service';
 
 @Component({
   selector: 'app-login',
@@ -17,12 +16,13 @@ export class LoginComponent {
 
   constructor(
     private userService: UsuariosService,
-
+    private alerta: AlertifyService,
+    private router: Router
   ) {
     this.formLogin = new FormGroup({
       email: new FormControl(),
       password: new FormControl(),
-      numero:new FormControl()
+      numero: new FormControl()
     })
   }
 
@@ -34,9 +34,12 @@ export class LoginComponent {
     this.userService.login(this.formLogin.value)
       .then(response => {
         console.log(response);
+        this.router.navigate(['/inicio']);
       })
-      .catch(error => console.log(error));
-      
+      .catch(error => {
+        console.log(error);
+        this.alerta.error('Error en la contraseña o correo');
+      });
   }
 
 
