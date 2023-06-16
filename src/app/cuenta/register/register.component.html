@@ -1,20 +1,57 @@
 <h2>Registro de usuario</h2>
 <form [formGroup]="formReg" (ngSubmit)="onSubmit()">
     <div class="mb-3">
-        <label class="form-label">Nombre</label>
-        <input type="text" class="form-control" formControlName="name">
+        <label class="col-2 col-form-label">Nombre(s)</label>
+        <div class="col-8">
+            <input class="form-control" type="text" [ngClass]="{'is-invalid':!formReg.get('nombre')?.valid}" placeholder="Nombre" formControlName="nombre">
+            <div *ngIf="formReg.controls['nombre'].errors?.['required']" class="invalidfeedback">
+                Nombre obligatorio
+            </div>
+            <div *ngIf="formReg.controls['nombre'].errors?.['minlength']" class="invalid-feedback">
+                Por lo menos tres caracteres
+            </div>
+        </div>
     </div>
     <div class="mb-3">
-        <label class="form-label">Apellido</label>
-        <input type="text" class="form-control" formControlName="lastname">
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Correo</label>
-        <input type="text" class="form-control" formControlName="email">
+        <label class="col-2 col-form-label">Correo</label>
+        <div class="col-8">
+            <input class="form-control" [ngClass]="{'is-invalid':!formReg.get('correo')?.valid }" type="text" placeholder="example@gmail.com" formControlName="correo">
+            <div *ngIf="formReg.controls['correo'].errors?.['required']" class="invalidfeedback">
+                Correo obligatorio
+            </div>
+            <div *ngIf="formReg.controls['correo'].errors?.['email']" class="invalid-feedback">
+                El correo no tiene el formato correcto
+            </div>
+        </div>
     </div>
     <div class="mb-3">
         <label class="form-label">Contraseña</label>
-        <input type="password" class="form-control" formControlName="password">
+        <div class="col-8">
+            <input type="password" class="form-control" formControlName="password" [ngClass]="{'is-invalid':!formReg.get('password')?.valid}" formControlName="password">
+            <div *ngIf="formReg.controls['password'].errors?.['required']" class="invalidfeedback">
+                Contraseña obligatoria
+            </div>
+            <div *ngIf="formReg.controls['password'].errors?.['minlength']" class="invalid-feedback">
+                Por lo menos ocho caracteres
+            </div>
+        </div>
     </div>
-    <input type="submit" value="Enviar">
+    <div class="mb-3">
+        <label class="form-label">Confirmar contraseña</label>
+        <div class="col-8">
+            <input type="password" class="form-control" formControlName="passwordVer">
+            <div *ngIf="formReg.controls['passwordVer'].errors?.['required']" class="invalidfeedback">
+                Vuelve a ingresar tu contraseña
+            </div>
+            <div *ngIf="formReg.hasError('passwordMismatch')" class="invalid-feedback">
+                Las contraseñas deben ser iguales
+            </div>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-outline-primary" [disabled]="formReg.invalid">
+      Guardar
+    </button>
 </form>
+
+<br>
+<br>

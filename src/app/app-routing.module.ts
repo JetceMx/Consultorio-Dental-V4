@@ -13,6 +13,7 @@ import { RegisterComponent } from './cuenta/register/register.component';
 import { LoginComponent } from './cuenta/login/login.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { LoadingComponent } from './loading/loading.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -29,6 +30,7 @@ const routes: Routes = [
   { path: 'Cuenta/loginE', component: LoginComponent },
   { path: 'Cuenta/loginT', component: LoginTComponent },
   {path:  'busqueda', component: BusquedaComponent},
+  { path: 'loading', component:LoadingComponent}, //Ruta para acomodar el loading, espero no olvidar borrarla
   { path: '**', component: Error404Component }
 ];
 

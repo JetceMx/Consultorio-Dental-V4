@@ -41,6 +41,7 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { CuentaComponent } from './cuenta/cuenta.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 @NgModule({
@@ -60,7 +61,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     FiltroPipe,
     Error404Component,
     PadreComponent,
-    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent, BusquedaComponent
+    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent, BusquedaComponent, LoadingComponent
   ],
   imports: [
     BrowserModule,
