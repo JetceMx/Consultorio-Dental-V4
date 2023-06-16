@@ -45,12 +45,12 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Teléfono</label>
             <div class="col-8">
-                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('telefono')?.valid}" placeholder="Teléfono" formControlName="telefono">
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('telefono')?.valid}" placeholder="Teléfono" formControlName="telefono"> input
                 <div *ngIf="forma.controls['telefono'].errors?.['required']" class="invalidfeedback">
                     Ingresa tu teléfono
                 </div>
                 <div *ngIf="forma.controls['telefono'].errors?.['minlength']" class="invalid-feedback">
-                    Ingresa los 10 digitos de tu número
+                    Ingresa los 7 digitos restantes
                 </div>
             </div>
         </div>
@@ -70,6 +70,37 @@
             </div>
         </div>
 
+        <br>
+
+        <!--Tipo de cita-->
+        <div class="form-group-row">
+            <fieldset>
+                <legend class="col-2 col-form-label">Tipo de cita</legend>
+                <label>
+                  <input type="radio" formControlName="tipoCita" value="Revision y diagnostico">
+                  Revision y diagnostico
+                </label>
+                <label>
+                  <input type="radio" formControlName="tipoCita" value="Tratamientos estéticos">
+                  Tratamientos estéticos
+                </label>
+                <label>
+                  <input type="radio" formControlName="tipoCita" value="Tratamientos medicos">
+                  Tratamientos medicos
+                </label>
+                <label>
+                  <input type="radio" formControlName="tipoCita" value="Limpieza">
+                  Limpieza
+                </label>
+                <label>
+                  <input type="radio" formControlName="tipoCita" value="Urgencias">
+                  Urgencias
+                </label>
+            </fieldset>
+            <div *ngIf="forma.controls['tipoCita'].errors?.['required']" class="invalid-feedback">
+                Selecciona un tipo de cita
+            </div>
+        </div>
         <br>
 
         <!-- Fecha -->
@@ -95,6 +126,17 @@
         </div>
         <!-- Hora -->
 
+        <!--Sucursal-->
+        <div class="form-group row">
+            <label for="sucursal" class="col-2 col-form-label"> Seleccione una sucursal</label>
+            <select id="sucursal" formControlName="sucursal">
+            <option value="" selected disabled hidden>Seleccionar una opción</option>
+            <option value="Altaria">Centro Comercial Altaria</option>
+            <option value="Parian">Centro Comercial El Parian</option>
+            <option value="Universidad">Centro Comercial Altaria</option>
+          </select>
+        </div>
+
         <div class="form-group row">
             <label class="col-2 col-form-label">&nbsp;</label>
             <div class="input-group col-md-8">
@@ -103,6 +145,7 @@
                 </button>
             </div>
         </div>
+
     </div>
 
 </form>

@@ -20,6 +20,8 @@ export class RevisarComponent implements OnInit{
       correo: "13@gmail.com",
       fecha: "11-12-2023",
       hora: "14-23",
+      tipoCita: "",
+      sucursal: ""
     }]
 
   }
@@ -37,7 +39,7 @@ export class RevisarComponent implements OnInit{
   async onClickDelete(cita:citasInterface){
     const response = await this.citasService.deleteregis(cita);
     console.log(response);
-    
+
   }
 
 }

@@ -29,6 +29,8 @@ export class AgendarComponent implements OnInit {
     correo: "example@gmail.com",
     fecha: "",
     hora: "",
+    tipoCita: "",
+    sucursal: "",
   }
 
 
@@ -37,10 +39,12 @@ export class AgendarComponent implements OnInit {
       'nombre': new FormControl('', [Validators.required, Validators.minLength(3)]),
       'apellidos': new FormControl('', [Validators.required]),
       'edad': new FormControl('', [Validators.required]),
-      'telefono': new FormControl('', [Validators.required, Validators.minLength(10)]),
+      'telefono': new FormControl('', [Validators.required, Validators.minLength(7)]),
       'correo': new FormControl('', [Validators.required, Validators.email]),
       'fecha': new FormControl('', [Validators.required]),
       'hora': new FormControl('', [Validators.required, this.validacionDeHora]),
+      'tipoCita': new FormControl('', [Validators.required]),
+      'sucursal': new FormControl('',[ Validators.required])
     });
     this.forma.setValue(this.usuario);
   }

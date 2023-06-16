@@ -7,4 +7,6 @@ export interface citasInterface {
     correo: string,
     fecha: string,
     hora: string,
+    tipoCita: string,
+    sucursal: string
 }
