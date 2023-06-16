@@ -29,6 +29,17 @@ export class LocalCitasService {
     console.log(citaRef)
     return addDoc(citaRef,cita);
   }
+  addregis2(cita:citasInterface){
+    const citaRef = collection(this.firestore,"Limpieza");
+    console.log(citaRef)
+    return addDoc(citaRef,cita);
+  }
+  addregis3(cita:citasInterface){
+    const citaRef = collection(this.firestore,"Ortodoncia");
+    console.log(citaRef)
+    return addDoc(citaRef,cita);
+  }
+
   getregis():Observable<citasInterface[]>{
     const citaRef = collection(this.firestore,"citas");
     console.log(collection);

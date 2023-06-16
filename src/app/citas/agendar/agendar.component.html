@@ -108,6 +108,9 @@
             <label class="col-2 col-form-label">Fecha de la cita</label>
             <div class="col-8">
                 <input class="form-control" type="date" [min]="fechaStrMinima" formControlName="fecha">
+                <div *ngIf="forma.controls['fecha'].errors?.['minlength']" class="invalid-feedback">
+                    Seleccione una fecha valida 
+            </div>
             </div>
         </div>
         <!-- Fecha -->

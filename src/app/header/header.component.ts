@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from '../usuarios.service';
 import { Router } from '@angular/router';
+import { Injectable } from '@angular/core';
+import { citasInterface } from '../citas/local-citas.model';
+import { LocalCitasService } from '../citas/local-citas.service';
+
+@Injectable ({providedIn:'root'})
 
 @Component({
   selector: 'app-header',
@@ -8,12 +13,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
+  cita:citasInterface[];
+  filterPost = '';
+
   constructor(
     private userService: UsuariosService,
-    private router: Router
-  ) { }
+    private router: Router, private citasService: LocalCitasService
+    
+  ) { this.cita=[{
+    nombre: "Juan",
+    apellidos: "Teran",
+    edad: "20",
+    telefono: "4444",
+    correo: "13@gmail.com",
+    fecha: "11-12-2023",
+    hora: "14-23",
+  }]
+}
+
 
   ngOnInit(): void {
+      this.citasService.getregis().subscribe(cita =>{
+        console.log(cita);
+        this.cita=cita;
+      })
   }
 
   onClick() {

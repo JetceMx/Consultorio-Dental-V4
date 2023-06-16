@@ -1,0 +1,29 @@
+.nav{
+  width:90%;
+	max-width:1000px;
+	margin:20px auto;
+	background:#024959;
+}
+
+.in-flex{
+  width:100%;
+}
+
+.home{
+  width: 100%;
+}
+
+@media (max-width: 420px) {
+  .in-flex{
+    width: 91%;
+    height: 100%;
+  }
+  .nav{
+    width:80%;
+		height:100%;
+		left:-100%;
+		margin:0;
+		position: fixed;
+  }
+}
+
