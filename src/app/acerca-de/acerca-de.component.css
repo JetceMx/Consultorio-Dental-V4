@@ -51,6 +51,24 @@ nav {
     background-size: cover;
 }
 
+.example-card5 {
+    max-width: 390px;
+}
+
+.example-header-image5 {
+    background-image: url('../../assets/images/Montse.jpg');
+    background-size: cover;
+}
+
+.example-card6 {
+    max-width: 390px;
+}
+
+.example-header-image6 {
+    background-image: url('../../assets/images/Luis.jpg');
+    background-size: cover;
+}
+
  :host {
     display: flex;
     flex-direction: column;
