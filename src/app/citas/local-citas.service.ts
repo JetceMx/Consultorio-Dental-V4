@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { citasInterface } from './local-citas.model';
-import { Firestore,collection,addDoc, collectionData,doc,deleteDoc } from '@angular/fire/firestore';
+import { Firestore, collection, addDoc, collectionData, doc, deleteDoc } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class LocalCitasService {
   //private arrayCitas: citasInterface[];
 
-  constructor(private firestore:Firestore) {
+  constructor(private firestore: Firestore) {
     //this.arrayCitas = JSON.parse(localStorage.getItem('data') || '[]');
 
   }
@@ -24,39 +24,64 @@ export class LocalCitasService {
     }
   }*/
 
-  addregis(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Citas RyD");
+  addregis(cita: citasInterface) {
+    const citaRef = collection(this.firestore, "CitasRyD");
     console.log(citaRef)
-    return addDoc(citaRef,cita);
+    return addDoc(citaRef, cita);
   }
-  addregis2(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Citas Esteticos");
+  addregis2(cita: citasInterface) {
+    const citaRef = collection(this.firestore, "CitasEsteticos");
     console.log(citaRef)
-    return addDoc(citaRef,cita);
+    return addDoc(citaRef, cita);
   }
-  addregis3(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Citas Medicos");
+  addregis3(cita: citasInterface) {
+    const citaRef = collection(this.firestore, "CitasMedicos");
     console.log(citaRef)
-    return addDoc(citaRef,cita);
+    return addDoc(citaRef, cita);
   }
-  addregis4(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Citas Limpieza");
+  addregis4(cita: citasInterface) {
+    const citaRef = collection(this.firestore, "CitasLimpieza");
     console.log(citaRef)
-    return addDoc(citaRef,cita);
+    return addDoc(citaRef, cita);
   }
-  addregis5(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Citas Urgencias");
+  addregis5(cita: citasInterface) {
+    const citaRef = collection(this.firestore, "CitasUrgencias");
     console.log(citaRef)
-    return addDoc(citaRef,cita);
+    return addDoc(citaRef, cita);
   }
 
-  getregis():Observable<citasInterface[]>{
-    const citaRef = collection(this.firestore,"citas");
+  getregisRyD(): Observable<citasInterface[]> {
+    const citaRef = collection(this.firestore, "CitasRyD");
     console.log(collection);
-    return collectionData(citaRef,{idField: "id"})as Observable<citasInterface[]>;
+    return collectionData(citaRef, { idField: "id" }) as Observable<citasInterface[]>;
   }
-  deleteregis(cita:citasInterface){
-    const citaDocRef = doc(this.firestore,`citas/${cita.id}`);
+
+  getregisEst(): Observable<citasInterface[]> {
+    const citaRef = collection(this.firestore, "CitasEsteticos");
+    console.log(collection);
+    return collectionData(citaRef, { idField: "id" }) as Observable<citasInterface[]>;
+  }
+
+  getregisMed(): Observable<citasInterface[]> {
+    const citaRef = collection(this.firestore, "CitasMedicos");
+    console.log(collection);
+    return collectionData(citaRef, { idField: "id" }) as Observable<citasInterface[]>;
+  }
+
+  getregisLim(): Observable<citasInterface[]> {
+    const citaRef = collection(this.firestore, "CitasLimpieza");
+    console.log(collection);
+    return collectionData(citaRef, { idField: "id" }) as Observable<citasInterface[]>;
+  }
+
+  getregisUrg(): Observable<citasInterface[]> {
+    const citaRef = collection(this.firestore, "CitasUrgencias");
+    console.log(collection);
+    return collectionData(citaRef, { idField: "id" }) as Observable<citasInterface[]>;
+  }
+
+  deleteregis(cita: citasInterface) {
+    const citaDocRef = doc(this.firestore, `citas/${cita.id}`);
     return deleteDoc(citaDocRef);
   }
   /*agregarCita(cita: citasInterface) {

@@ -7,39 +7,104 @@ import { LocalCitasService } from '../local-citas.service';
   templateUrl: './revisar.component.html',
   styleUrls: ['./revisar.component.css']
 })
-export class RevisarComponent implements OnInit{
-  cita:citasInterface[];
+export class RevisarComponent implements OnInit {
+
+  citaRyD: citasInterface[];
+  citaEst: citasInterface[];
+  citaMed: citasInterface[];
+  citaLim: citasInterface[];
+  citaUrg: citasInterface[];
+
   filterPost = '';
 
-  constructor(private citasService: LocalCitasService){
-    this.cita=[{
-      nombre: "Juan",
-      apellidos: "Teran",
-      edad: "20",
-      telefono: "4444",
-      correo: "13@gmail.com",
-      fecha: "11-12-2023",
-      hora: "14-23",
+  constructor(private citasService: LocalCitasService) {
+    this.citaRyD = [{
+      nombre: "",
+      apellidos: "",
+      edad: "",
+      telefono: "",
+      correo: "",
+      fecha: "",
+      hora: "",
+      tipoCita: "",
+      sucursal: ""
+    }]
+
+    this.citaEst = [{
+      nombre: "",
+      apellidos: "",
+      edad: "",
+      telefono: "",
+      correo: "",
+      fecha: "",
+      hora: "",
+      tipoCita: "",
+      sucursal: ""
+    }]
+
+    this.citaMed = [{
+      nombre: "",
+      apellidos: "",
+      edad: "",
+      telefono: "",
+      correo: "",
+      fecha: "",
+      hora: "",
+      tipoCita: "",
+      sucursal: ""
+    }]
+
+    this.citaLim = [{
+      nombre: "",
+      apellidos: "",
+      edad: "",
+      telefono: "",
+      correo: "",
+      fecha: "",
+      hora: "",
+      tipoCita: "",
+      sucursal: ""
+    }]
+
+    this.citaUrg = [{
+      nombre: "",
+      apellidos: "",
+      edad: "",
+      telefono: "",
+      correo: "",
+      fecha: "",
+      hora: "",
       tipoCita: "",
       sucursal: ""
     }]
 
   }
 
-  ngOnInit(){
-    this.citasService.getregis().subscribe(cita =>{
-      console.log(cita);
-      this.cita=cita;
-    })
-
-    /*console.log(this.citasService.getArrayCitas())
-    this.arrayCitas=this.citasService.getArrayCitas();
-    console.log("revisar comp"+this.arrayCitas);*/
+  ngOnInit() {
+    this.bajarDatosFire();
   }
-  async onClickDelete(cita:citasInterface){
+
+  bajarDatosFire(): void {
+    this.citasService.getregisRyD().subscribe(cita => {
+      this.citaRyD = cita;
+    })
+    this.citasService.getregisEst().subscribe(cita => {
+      this.citaEst = cita;
+    })
+    this.citasService.getregisMed().subscribe(cita => {
+      this.citaMed = cita;
+    })
+    this.citasService.getregisLim().subscribe(cita => {
+      this.citaLim = cita;
+    })
+    this.citasService.getregisUrg().subscribe(cita => {
+      this.citaUrg = cita;
+    })
+  }
+
+  async onClickDelete(cita: citasInterface) {
     const response = await this.citasService.deleteregis(cita);
     console.log(response);
-
   }
 
 }
