@@ -25,17 +25,27 @@ export class LocalCitasService {
   }*/
 
   addregis(cita:citasInterface){
-    const citaRef = collection(this.firestore,"citas");
+    const citaRef = collection(this.firestore,"Citas RyD");
     console.log(citaRef)
     return addDoc(citaRef,cita);
   }
   addregis2(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Limpieza");
+    const citaRef = collection(this.firestore,"Citas Esteticos");
     console.log(citaRef)
     return addDoc(citaRef,cita);
   }
   addregis3(cita:citasInterface){
-    const citaRef = collection(this.firestore,"Ortodoncia");
+    const citaRef = collection(this.firestore,"Citas Medicos");
+    console.log(citaRef)
+    return addDoc(citaRef,cita);
+  }
+  addregis4(cita:citasInterface){
+    const citaRef = collection(this.firestore,"Citas Limpieza");
+    console.log(citaRef)
+    return addDoc(citaRef,cita);
+  }
+  addregis5(cita:citasInterface){
+    const citaRef = collection(this.firestore,"Citas Urgencias");
     console.log(citaRef)
     return addDoc(citaRef,cita);
   }

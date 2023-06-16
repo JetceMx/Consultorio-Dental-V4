@@ -59,9 +59,33 @@ export class AgendarComponent implements OnInit {
   }
   async onSubmit(){
     console.log(this.forma.value)
-    const response=await this.citasService.addregis(this.forma.value);
-    console.log(response);
-    this.alerta.success("Tu cita quedo registrada exitosamente");
+    switch(this.forma.value.tipoCita){
+      case 'Revision y diagnostico':
+        let response=await this.citasService.addregis(this.forma.value);
+        console.log(response);
+        this.alerta.success("Tu cita quedo registrada exitosamente");
+        break;
+      case 'Tratamientos esteticos':
+        await this.citasService.addregis2(this.forma.value);
+
+        this.alerta.success("Tu cita quedo registrada exitosamente");
+        break;
+      case 'Tratamientos medicos':
+        await this.citasService.addregis3(this.forma.value);
+
+        this.alerta.success("Tu cita quedo registrada exitosamente");
+        break;
+      case 'Limpieza':
+        await this.citasService.addregis4(this.forma.value);
+
+        this.alerta.success("Tu cita quedo registrada exitosamente");
+        break;
+      case 'Urgencias':
+        await this.citasService.addregis5(this.forma.value);
+
+        this.alerta.success("Tu cita quedo registrada exitosamente");
+        break;
+    }
   }
 
   /*guardarCambios(): void {
@@ -79,5 +103,5 @@ export class AgendarComponent implements OnInit {
     }
     return null
   }
-  
+
 }
