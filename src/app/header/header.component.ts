@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { UsuariosService } from '../usuarios.service';
-import { Router, NavigationExtras} from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { Injectable } from '@angular/core';
 import { citasInterface } from '../citas/local-citas.model';
 import { LocalCitasService } from '../citas/local-citas.service';
@@ -15,7 +15,7 @@ import { LocalCitasService } from '../citas/local-citas.service';
 export class HeaderComponent {
   cita: citasInterface[];
   filterPost = '';
-  parametro:string=""
+  parametro: string = ""
 
   constructor(
     private userService: UsuariosService,
@@ -37,10 +37,10 @@ export class HeaderComponent {
 
 
   ngOnInit(): void {
-    this.citasService.getregis().subscribe(cita => {
+    /*this.citasService.getregis().subscribe(cita => {
       console.log(cita);
       this.cita = cita;
-    })
+    })*/
   }
 
   onClick() {
@@ -50,11 +50,11 @@ export class HeaderComponent {
       })
       .catch(error => console.log(error));
   }
-  Buscar(){
-    const navigationExtras: NavigationExtras={
-      queryParams: { parametro: this.parametro}
+  Buscar() {
+    const navigationExtras: NavigationExtras = {
+      queryParams: { parametro: this.parametro }
     }
-    this.router.navigateByUrl('/busqueda',navigationExtras)
+    this.router.navigateByUrl('/busqueda', navigationExtras)
     console.log(this.parametro)
   }
 }
