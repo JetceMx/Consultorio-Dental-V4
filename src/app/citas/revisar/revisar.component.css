@@ -1,3 +1,11 @@
 .container{
     min-height: calc(70vh - 70px);
 }
+
+.contenedor {
+  margin: auto;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+}

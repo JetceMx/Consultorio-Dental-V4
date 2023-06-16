@@ -1,14 +1,25 @@
 .contenedor {
     margin: auto;
-    width: 80%;
     display: flex;
-    flex-direction: row;
+    width: 100%;
+    height: auto;
+
 }
 
-.img{
+.dis{
   width: 100%;
   height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
 }
+
+.imagen{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
 
 .servicios {
     text-align: center;
@@ -24,18 +35,32 @@
     flex-direction: column;
     text-align: left;
     align-items: left;
+    margin: 10px;
 }
 
 .titulo-oferta {
     font-size: 20px;
 }
 
+.iframe{
+  margin: auto;
+  width: 80%;
+  height: 50%;
+}
+
 .contenedor-servicios,
 .contenedor-ayuda,
 .contenedor-ofertas,
-.contenedor-empresa,
-.contenedor-video {
+.contenedor-empresa{
     padding: 10px;
+}
+
+.contenedor-video{
+  width: 80%;
+  display: flex;
+  flex-wrap: wrap;
+    height: auto;
+  margin:auto;
 }
 
 .contenedor-empresa {
@@ -100,27 +125,22 @@ hr {
     display: flex;
     flex-direction: column;
     margin: 10px;
-}
-
-*{
-  padding: 0px;
-  margin: 0px;
-}
-
-.home{
-  display: flex;
-  flex-wrap: wrap;
-  width:100%;
+    display: flex;
+    text-align: left;
+    align-items: left;
 }
 
 .in-flex{
-  width:100%;
+  width: 100%;
+  height: auto;
+  flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+
 }
 
-@media (max-width: 420px) {
-  .in-flex{
-    width: 91%;
-    height: 100%;
+@media screen {
+  .contenedor-video{
+    width: 100%;
   }
 }
-

@@ -124,3 +124,12 @@ section {
     display: flex;
     justify-content: center;
 }
+
+.contenedor {
+  margin: auto;
+  display: flex;
+  width: 100%;
+  height: auto;
+  justify-content: center;
+  flex-direction: column;
+}

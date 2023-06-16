@@ -1,111 +1,151 @@
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0">
 
-    <script src="assets/js/geo.js"></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPd2D-O7mbfA8B2x7n60X9rsXx3B2J0Bs&callback=initMap">
+  <script src="assets/js/geo.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCPd2D-O7mbfA8B2x7n60X9rsXx3B2J0Bs&callback=initMap">
     </script>
 
 </head>
 <div class="tit">
-    <div class="enca">
-        <h1 style="color: #0D6EFD">Queremos conocerte</h1>
-        <h4 style="color:#E83F6C;">Estamos entusiasmados de poder atenderte y colaboar con el bienestar de tu familia y el tuyo</h4>
-        <hr>
-    </div>
+  <div class="enca">
+    <h1 style="color: #0D6EFD">Queremos conocerte</h1>
+    <h4 style="color:#E83F6C;">Estamos entusiasmados de poder atenderte y
+      colaboar con el bienestar de tu familia y el tuyo</h4>
+    <hr>
+  </div>
 </div>
 
+<div class="contenedor">
 
-<div class="dire">
-    <div class="contact">
-        <h2 style="color: #0D6EFD">Teléfono</h2>
-        <h5>449 123 4567</h5>
-        <br>
-        <br>
-        <h2 style="color: #0D6EFD">Correo electronico</h2>
-        <h5>atencionalcliente@smile.com</h5>
-    </div>
-    <div class="contact">
-        <h2 style="color: #0D6EFD">Direccion</h2>
-        <p>{{selection}}</p>
-        <select [(ngModel)]="selection">
-      <option value="Blvd. A Zacatecas 849, Trojes de Alonso, 20116 Aguascalientes, Ags.">Centro comercial Altaria</option>
-      <option value="Lic. Benito Juárez, Zona Centro, 20000 Aguascalientes, Ags.">Centro comercial El Parian</option>
-      <option value="Bosques del Prado Sur, Aguascalientes, Ags.">Avenidad Universidad</option>
-    </select>
-    </div>
+  <div class="dis">
+      <div class="dis">
+          <div class="dis">
+              <h2 style="color: #0D6EFD">Teléfono</h2>
+          </div>
+
+          <h5>449 123 4567</h5>
+
+      </div>
+      <br>
+      <div class="dis">
+          <div class="dis">
+              <h2 style="color: #0D6EFD">Correo electronico</h2>
+          </div>
+          <h5>atencionalcliente@smile.com</h5>
+
+      </div>
+
+  </div>
+
+  <div class="dis">
+
+      <h2 style="color: #0D6EFD">Direccion</h2>
+      <p>{{selection}}</p>
+      <select class="dis" [(ngModel)]="selection">
+          <option
+              value="Blvd. A Zacatecas 849, Trojes de Alonso, 20116 Aguascalientes, Ags.">Centro
+              comercial Altaria</option>
+          <option
+              value="Lic. Benito Juárez, Zona Centro, 20000 Aguascalientes, Ags.">Centro
+              comercial El Parian</option>
+          <option value="Bosques del Prado Sur, Aguascalientes, Ags.">Avenidad
+              Universidad</option>
+      </select>
+
+  </div>
+
 </div>
+
+<br>
+<br>
 
 <div class="tit">
-    <div class="enca">
-        <h1 style="color: #0D6EFD; justify-content: left">Registrate</h1>
-        <hr>
-    </div>
+  <div class="enca">
+    <h1 style="color: #0D6EFD; justify-content: left">Registrate</h1>
+    <hr>
+  </div>
 </div>
-
 
 <br>
 
 <div class="tit">
-    <div class="enca">
-        <h1 style="color: #0D6EFD; justify-content: left">O mandanos tus dudas directamente</h1>
-        <hr>
-    </div>
+  <div class="enca">
+    <h1 style="color: #0D6EFD; justify-content: center; text-align: center;">O mandanos tus dudas
+      directamente</h1>
+    <hr>
+  </div>
 </div>
 
 <br>
 
-<div class="contact">
-    <div class="dire">
+<div class="contenedor">
+  <div class="dis">
 
-        <div class="contact">
-            <form [formGroup]="forma" (ngSubmit)="guardarCambios()" class="needs-validation" novalidate>
-                <div class="container">
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">Nombreㅤㅤㅤㅤㅤㅤㅤㅤ</label>
-                        <br>
-                        <br>
-                        <div class="col-8">
+    <div class="contact">
+      <form [formGroup]="forma" (ngSubmit)="guardarCambios()"
+        class="needs-validation" novalidate>
+        <div class="container">
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Nombreㅤㅤㅤㅤㅤㅤㅤㅤ</label>
+            <br>
+            <br>
+            <div class="col-8">
 
-                            <input class="form-control" [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}" type="text" placeholder="Nombre" formControlName="nombre">
-                            <div *ngIf="forma.controls['nombre'].errors?.['required']" class="invalid-feedback">
-                                El nombre es necesario
-                            </div>
-                            <div *ngIf="forma.controls['nombre'].errors?.['minlength']" class="invalid-feedback">
-                                Por lo menos tres caracteres
-                            </div>
-                        </div>
-                        <br>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">Correo</label>
-                        <br>
-                        <div class="col-8">
+              <input class="form-control"
+                [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}"
+                type="text" placeholder="Nombre" formControlName="nombre">
+              <div *ngIf="forma.controls['nombre'].errors?.['required']"
+                class="invalid-feedback">
+                El nombre es necesario
+              </div>
+              <div *ngIf="forma.controls['nombre'].errors?.['minlength']"
+                class="invalid-feedback">
+                Por lo menos tres caracteres
+              </div>
+            </div>
+            <br>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">Correo</label>
+            <br>
+            <div class="col-8">
 
-                            <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text" placeholder="Correo electronico" formControlName="correo">
-                            <div *ngIf="forma.controls['correo'].errors?.['required']" class="invalid-feedback">
-                                Correo obligatorio
-                            </div>
+              <input class="form-control"
+                [ngClass]="{'is-invalid':!forma.get('correo')?.valid }"
+                type="text" placeholder="Correo electronico"
+                formControlName="correo">
+              <div *ngIf="forma.controls['correo'].errors?.['required']"
+                class="invalid-feedback">
+                Correo obligatorio
+              </div>
 
-                            <div *ngIf="forma.controls['correo'].errors?.['email']" class="invalid-feedback">
-                                El correo no tiene el formato correcto
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label class="col-2 col-form-label">&nbsp;</label>
-                        <div class="input-group col-md-8">
-                            <button type="submit" class="btn btn-outline-primary" [disabled]="forma.invalid">Enviar</button>
-                        </div>
-                    </div>
-                </div>
-            </form>
+              <div *ngIf="forma.controls['correo'].errors?.['email']"
+                class="invalid-feedback">
+                El correo no tiene el formato correcto
+              </div>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-2 col-form-label">&nbsp;</label>
+
+          </div>
         </div>
-        <div class="form-group contact">
-            <label for="exampleFormControlTextarea1">Dejanos un comentario</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" style="width:400px;height:200px"></textarea>
-        </div>
+      </form>
     </div>
+    <div class="form-group contact">
+      <label for="exampleFormControlTextarea1">Dejanos un comentario</label>
+      <textarea class="form-control" id="exampleFormControlTextarea1"
+        style="width:400px;height:200px"></textarea>
+        <br>
+        <br>
+        <div class="input-group col-md-8">
+              <button type="submit" class="btn btn-outline-primary"
+                [disabled]="forma.invalid">Enviar</button>
+            </div>
+    </div>
+  </div>
 </div>
 
 <br>
