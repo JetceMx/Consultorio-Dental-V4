@@ -12,22 +12,22 @@ export class ContactanosComponent {
   selection = '';
 
   forma!: FormGroup;
-  usuario:any={
-    nombre:"xxx",
-    telefono:"000-000-0000",
-    correo:"zzz@www.com"
-    }
+  usuario: any = {
+    nombre: "Ingresa tu nombre",
+    telefono: "",
+    correo: "Correo_Aqui@gmail.com"
+  }
 
-  constructor(){
+  constructor() {
     this.forma = new FormGroup({
-    'nombre': new FormControl('', [Validators.required, Validators.minLength(3)] ),
-    'telefono': new FormControl('', [Validators.required] ),
-    'correo': new FormControl('', [Validators.required,Validators.email] ),
+      'nombre': new FormControl('', [Validators.required, Validators.minLength(3)]),
+      'telefono': new FormControl('', [Validators.required]),
+      'correo': new FormControl('', [Validators.required, Validators.email]),
     });
     this.forma.setValue(this.usuario);
   }
 
-  guardarCambios():void{
+  guardarCambios(): void {
     console.log("metodo guardarCambios");
     console.log(this.forma);
     console.log(this.forma.value);

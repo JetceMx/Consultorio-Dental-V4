@@ -1,18 +1,10 @@
-.enca {
+.titulos {
   display: flex;
   flex-direction: column;
-  justify-content: left;
-  margin: auto;
-}
-
-.tit {
-  display: flex;
-}
-
-.dire {
-  display: flex;
   text-align: center;
-  align-items: center;
+  margin: 0 auto;
+  padding: 5px;
+  width: 80%;
 }
 
 .contact {
@@ -32,12 +24,19 @@
 }
 
 .contenedor {
-  margin: auto;
   display: flex;
-  width: 100%;
-  height: auto;
-  justify-content: center;
+  flex-direction: row;
+  margin: 0 auto;
+  width: 80%;
+  justify-content: space-evenly;
+  align-items: center;
+}
 
+.contenedor-info{
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 
