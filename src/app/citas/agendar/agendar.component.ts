@@ -4,6 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocalCitasService } from '../local-citas.service';
 import { AlertifyService } from 'src/app/alertify.service';
 import { citasInterface } from '../local-citas.model';
+import {CitaService} from '../../cita.service';
 
 @Component({
   selector: 'app-agendar',
@@ -11,6 +12,15 @@ import { citasInterface } from '../local-citas.model';
   styleUrls: ['./agendar.component.css']
 })
 export class AgendarComponent implements OnInit {
+
+
+  mensajeEnviado: boolean = false;
+
+  contactForm(formulario: any) {
+    this.CitaService.sendMessage(formulario).subscribe(() => {
+      this.mensajeEnviado = true;
+    });
+  }
 
   arrayCitas: citasInterface[] | any;
 
@@ -34,7 +44,7 @@ export class AgendarComponent implements OnInit {
   }
 
 
-  constructor(private pd: DatePipe, private citasService: LocalCitasService, private alerta: AlertifyService) {
+  constructor(private pd: DatePipe, private citasService: LocalCitasService, private alerta: AlertifyService, public CitaService: CitaService) {
     this.forma = new FormGroup({
       'nombre': new FormControl('', [Validators.required, Validators.minLength(3)]),
       'apellidos': new FormControl('', [Validators.required]),

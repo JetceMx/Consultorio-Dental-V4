@@ -1,12 +1,12 @@
 <br>
 <h4 style="text-align:center">Agendar Cita</h4>
 <hr>
-<form [formGroup]="forma" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+<form [formGroup]="forma" (ngSubmit)="onSubmit()" (ngSubmit)="contactForm(form.value)" #form="ngForm" class="needs-validation" novalidate>
     <div class="container">
         <div class="form-group row">
             <label class="col-2 col-form-label">Nombre(s)</label>
             <div class="col-8">
-                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}" placeholder="Nombre" formControlName="nombre">
+                <input name="nombre" class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}" placeholder="Nombre" formControlName="nombre" ngModel>
                 <div *ngIf="forma.controls['nombre'].errors?.['required']" class="invalidfeedback">
                     Ingresa tu nombre
                 </div>
@@ -45,7 +45,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Teléfono</label>
             <div class="col-8">
-                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('telefono')?.valid}" placeholder="Teléfono" formControlName="telefono"> 
+                <input class="form-control" type="text" [ngClass]="{'is-invalid':!forma.get('telefono')?.valid}" placeholder="Teléfono" formControlName="telefono">
                 <div *ngIf="forma.controls['telefono'].errors?.['required']" class="invalidfeedback">
                     Ingresa tu teléfono
                 </div>
@@ -60,7 +60,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Correo</label>
             <div class="col-8">
-                <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text" placeholder="example@gmail.com" formControlName="correo">
+                <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text" placeholder="example@gmail.com" formControlName="correo" name="email" ngModel>
                 <div *ngIf="forma.controls['correo'].errors?.['required']" class="invalidfeedback">
                     Correo obligatorio
                 </div>
@@ -77,27 +77,27 @@
             <fieldset>
                 <legend class="col-2 col-form-label">Tipo de cita</legend>
                 <label>
-                  <input type="radio" formControlName="tipoCita" value="Revision y diagnostico">
+                  <input type="radio" formControlName="tipoCita" value="Revision y diagnostico" name="tipo" ngModel>
                   Revision y diagnostico
                 </label>
                 <label>
-                  <input type="radio" formControlName="tipoCita" value="Tratamientos esteticos">
+                  <input type="radio" formControlName="tipoCita" value="Tratamientos esteticos"name="tipo" ngModel>
                   Tratamientos estéticos
                 </label>
                 <label>
-                  <input type="radio" formControlName="tipoCita" value="Tratamientos medicos">
+                  <input type="radio" formControlName="tipoCita" value="Tratamientos medicos"name="tipo" ngModel>
                   Tratamientos medicos
                 </label>
                 <label>
-                  <input type="radio" formControlName="tipoCita" value="Limpieza">
+                  <input type="radio" formControlName="tipoCita" value="Limpieza"name="tipo" ngModel>
                   Limpieza
                 </label>
                 <label>
-                  <input type="radio" formControlName="tipoCita" value="Urgencias">
+                  <input type="radio" formControlName="tipoCita" value="Urgencias"name="tipo" ngModel>
                   Urgencias
                 </label>
             </fieldset>
-            <div *ngIf="forma.controls['tipoCita'].errors?.['required']" class="invalid-feedback">
+            <div *ngIf="forma.controls['tipoCita'].errors?.['required']" class="invalid-feedback" ngModel>
                 Selecciona un tipo de cita
             </div>
         </div>
@@ -107,7 +107,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Fecha de la cita</label>
             <div class="col-8">
-                <input class="form-control" type="date" [min]="fechaStrMinima" formControlName="fecha">
+                <input class="form-control" type="date" [min]="fechaStrMinima" formControlName="fecha" name="fecha" ngModel>
                 <div *ngIf="forma.controls['fecha'].errors?.['minlength']" class="invalid-feedback">
                     Seleccione una fecha valida
             </div>
@@ -121,7 +121,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Hora de la cita</label>
             <div class="col-8">
-                <input class="form-control" type="time" [ngClass]="{'is-invalid':!forma.get('hora')?.valid}" min="13:00" max="20:00" step="3600" formControlName="hora">
+                <input class="form-control" type="time" [ngClass]="{'is-invalid':!forma.get('hora')?.valid}" min="13:00" max="20:00" step="3600" formControlName="hora" name="hora" ngModel>
                 <div *ngIf="forma.controls['hora'].errors?.['this.validacionDeHora']" class="invalid-feedback">
                     Solo trabajamos de la 01:00 p.m. hasta las 8:00 p.m.
                 </div>
@@ -132,7 +132,7 @@
         <!--Sucursal-->
         <div class="form-group row">
             <label for="sucursal" class="col-2 col-form-label"> Seleccione una sucursal</label>
-            <select id="sucursal" formControlName="sucursal">
+            <select id="sucursal" formControlName="sucursal" name="sucursal" ngModel>
             <option value="" selected disabled hidden>Seleccionar una opción</option>
             <option value="Altaria">Centro Comercial Altaria</option>
             <option value="Parian">Centro Comercial El Parian</option>
