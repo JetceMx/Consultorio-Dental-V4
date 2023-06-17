@@ -4,7 +4,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { LocalCitasService } from '../local-citas.service';
 import { AlertifyService } from 'src/app/alertify.service';
 import { citasInterface } from '../local-citas.model';
-import {CitaService} from '../../cita.service';
+import { CitaService } from '../../cita.service';
 
 @Component({
   selector: 'app-agendar',
@@ -32,13 +32,13 @@ export class AgendarComponent implements OnInit {
   public horaStrMinima!: string | null;
 
   usuario: any = {
-    nombre: "Juan",
+    nombre: "usuario",
     apellidos: "Perez",
     edad: "60",
     telefono: "4491234567",
     correo: "example@gmail.com",
     fecha: "",
-    hora: "",
+    hora: "01:00",
     tipoCita: "",
     sucursal: "",
   }
@@ -54,7 +54,7 @@ export class AgendarComponent implements OnInit {
       'fecha': new FormControl('', [Validators.required]),
       'hora': new FormControl('', [Validators.required, this.validacionDeHora]),
       'tipoCita': new FormControl('', [Validators.required]),
-      'sucursal': new FormControl('',[ Validators.required])
+      'sucursal': new FormControl('', [Validators.required])
     });
     this.forma.setValue(this.usuario);
   }
@@ -67,11 +67,11 @@ export class AgendarComponent implements OnInit {
     this.arrayCitas = this.citasService.getArrayCitas();*/
 
   }
-  async onSubmit(){
+  async onSubmit() {
     console.log(this.forma.value)
-    switch(this.forma.value.tipoCita){
+    switch (this.forma.value.tipoCita) {
       case 'Revision y diagnostico':
-        let response=await this.citasService.addregis(this.forma.value);
+        let response = await this.citasService.addregis(this.forma.value);
         console.log(response);
         this.alerta.success("Tu cita quedo registrada exitosamente");
         break;
