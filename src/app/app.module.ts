@@ -42,6 +42,7 @@ import { CuentaComponent } from './cuenta/cuenta.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { LoadingComponent } from './loading/loading.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -76,6 +77,7 @@ import { LoadingComponent } from './loading/loading.component';
     MatButtonModule,
     MatGridListModule,
     MatMenuModule,
+    HttpClientModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideFirestore(() => getFirestore()),

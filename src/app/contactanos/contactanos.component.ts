@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MessageService } from '../message.service';
 @Component({
   selector: 'app-contactanos',
   templateUrl: './contactanos.component.html',
@@ -9,29 +10,16 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class ContactanosComponent {
 
   title = 'Proyecto';
-  selection = '';
+  mensajeEnviado: boolean = false;
 
   forma!: FormGroup;
-  usuario: any = {
-    nombre: "Ingresa tu nombre",
-    telefono: "",
-    correo: "Correo_Aqui@gmail.com"
-  }
 
-  constructor() {
-    this.forma = new FormGroup({
-      'nombre': new FormControl('', [Validators.required, Validators.minLength(3)]),
-      'telefono': new FormControl('', [Validators.required]),
-      'correo': new FormControl('', [Validators.required, Validators.email]),
+  constructor(public _MessageService: MessageService) {}
+
+  contactForm(formulario: any) {
+    this._MessageService.sendMessage(formulario).subscribe(() => {
+      this.mensajeEnviado = true;
     });
-    this.forma.setValue(this.usuario);
-  }
-
-  guardarCambios(): void {
-    console.log("metodo guardarCambios");
-    console.log(this.forma);
-    console.log(this.forma.value);
-    this.forma.reset(this.usuario);
   }
 
 }

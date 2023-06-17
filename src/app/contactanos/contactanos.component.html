@@ -1,91 +1,21 @@
-<div class="titulos">
-  <h1 style="color: #0D6EFD">Queremos conocerte</h1>
-  <h4 style="color:#E83F6C;">Estamos entusiasmados de poder atenderte y
-    colaborar con el bienestar de tu familia y el tuyo</h4>
-  <hr>
-</div>
-
-<div class="contenedor">
-  <div class="contenedor-info">
-    <h2>Teléfono</h2>
-    <p>449 123 4567</p>
-    <h2>Correo electronico</h2>
-    <p>atencionalcliente@smile.com</p>
-  </div>
-
-  <div class="contenedor-dir">
-    <h2>Direccion</h2>
-    <p>{{selection}}</p>
-    <select class="dis" [(ngModel)]="selection">
-      <option value="Blvd. A Zacatecas 849, Trojes de Alonso, 20116 Aguascalientes, Ags.">Centro
-        comercial Altaria</option>
-      <option value="Lic. Benito Juárez, Zona Centro, 20000 Aguascalientes, Ags.">Centro
-        comercial El Parian</option>
-      <option value="Bosques del Prado Sur, Aguascalientes, Ags.">Avenidad
-        Universidad</option>
-    </select>
-  </div>
-</div>
-
-<div class="titulos">
-  <h1 style="color: #0D6EFD;">O mandanos tus dudas directamente</h1>
-  <hr>
-</div>
-
-<div class="contenedor">
-  <form [formGroup]="forma" (ngSubmit)="guardarCambios()" class="needs-validation">
-    <div class="container">
-
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Nombre:ㅤㅤㅤㅤㅤㅤㅤㅤ</label>
-        <br>
-        <br>
-        <div class="col-8">
-          <input class="form-control" [ngClass]="{'is-invalid':!forma.get('nombre')?.valid}" type="text"
-            placeholder="Nombre" formControlName="nombre">
-          <div *ngIf="forma.controls['nombre'].errors?.['required']" class="invalid-feedback">
-            El nombre es necesario
-          </div>
-          <div *ngIf="forma.controls['nombre'].errors?.['minlength']" class="invalid-feedback">
-            Por lo menos tres caracteres
-          </div>
+<div class="container mt-5">
+    <h2 class="custom-heading">Formulario de contacto</h2>
+    <form class="custom-form" (ngSubmit)="contactForm(form.value)" #form="ngForm">
+        <div class="form-group">
+            <label class="custom-label">Nombre</label>
+            <input type="text" class="custom-input" name="nombre" ngModel>
         </div>
-        <br>
-      </div>
-
-      <div class="form-group row">
-        <label class="col-2 col-form-label">Correo:</label>
-        <br>
-        <div class="col-8">
-
-          <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text"
-            placeholder="Correo electronico" formControlName="correo">
-          <div *ngIf="forma.controls['correo'].errors?.['required']" class="invalid-feedback">
-            Correo obligatorio
-          </div>
-          <div *ngIf="forma.controls['correo'].errors?.['email']" class="invalid-feedback">
-            El correo no tiene el formato correcto
-          </div>
+        <div class="form-group">
+            <label class="custom-label">E-mail</label>
+            <input type="email" class="custom-input" name="email" ngModel>
         </div>
-      </div>
-
-      <div class="form-group row">
-        <label class="col-2 col-form-label">&nbsp;</label>
-      </div>
-
+        <div class="form-group">
+            <label class="custom-label">Mensaje</label>
+            <textarea class="custom-textarea" cols="3" rows="6" name="mensaje" ngModel></textarea>
+        </div>
+        <button type="submit" class="custom-button">Enviar</button>
+    </form>
+    <div *ngIf="mensajeEnviado" class="custom-alert">
+        El mensaje ha sido enviado correctamente.
     </div>
-  </form>
-
-  <div class="form-group contact">
-    <label for="exampleFormControlTextarea1">Dejanos un comentario</label>
-    <textarea class="form-control" id="exampleFormControlTextarea1" style="width:400px;height:200px"></textarea>
-    <br>
-    <br>
-    <div class="input-group col-md-8">
-      <button type="submit" class="btn btn-outline-primary" [disabled]="forma.invalid">Enviar</button>
-    </div>
-  </div>
 </div>
-
-
-<br>

@@ -1,12 +1,17 @@
-const express = require("express"); //importar express
-const bodyParser = require("body-parser");
-const app = express(); //crear al servidor
-const port = process.env.PORT || 3000;
+const express = require('express');
+const cors = require('cors');
+const bodyParser = require('body-parser');
+const configMensaje = require('./Mensaje');
 
-
-app.use(bodyParser.urlencoded({ extended: false }));
+const app = express();
 app.use(bodyParser.json());
+app.use(cors())
 
-app.listen(port, () => {
-    console.log(`hola servidor ejecucion en http://localhost:${port}`);
+app.post('/contacto', (req, res) => {
+    configMensaje(req.body);
+    res.status(200).send();
 })
+
+app.listen(3000, () => {
+    console.log('Servidor activo en el puerto 3000')
+});
