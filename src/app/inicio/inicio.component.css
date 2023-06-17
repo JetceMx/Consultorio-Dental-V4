@@ -7,8 +7,9 @@
 }
 
 .dis{
+  text-align: center;
+  justify-content: center;
   width: 100%;
-  height: auto;
   flex-wrap: wrap;
   display: flex;
   flex-direction: row;
@@ -22,6 +23,7 @@
 
 
 .servicios {
+  justify-content: center;
     text-align: center;
     display: flex;
     flex-direction: column;
