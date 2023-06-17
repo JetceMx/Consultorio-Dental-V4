@@ -13,48 +13,16 @@ import { LocalCitasService } from '../citas/local-citas.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  cita: citasInterface[];
-  filterPost = '';
-  parametro: string = ""
+  
+  searchTerm: string = '';
 
-  constructor(
-    private userService: UsuariosService,
-    private router: Router, private citasService: LocalCitasService
+  constructor(private router: Router) { }
 
-  ) {
-    this.cita = [{
-      nombre: "Juan",
-      apellidos: "Teran",
-      edad: "20",
-      telefono: "4444",
-      correo: "13@gmail.com",
-      fecha: "11-12-2023",
-      hora: "14-23",
-      tipoCita: "",
-      sucursal: ""
-    }]
-  }
-
-
-  ngOnInit(): void {
-    /*this.citasService.getregis().subscribe(cita => {
-      console.log(cita);
-      this.cita = cita;
-    })*/
-  }
-
-  onClick() {
-    this.userService.logout()
-      .then(() => {
-        this.router.navigate(['Cuenta/regisE']);
-      })
-      .catch(error => console.log(error));
-  }
-  Buscar() {
-    const navigationExtras: NavigationExtras = {
-      queryParams: { parametro: this.parametro }
+  search() {
+    if (this.searchTerm) {
+      this.router.navigate(['/preguntas'], { queryParams: { q: this.searchTerm } });
     }
-    this.router.navigateByUrl('/busqueda', navigationExtras)
-    console.log(this.parametro)
+    console.log("parametro enviado:" + this.searchTerm)
   }
 }
+

@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-preguntas',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./preguntas.component.css']
 })
 export class PreguntasComponent {
+  searchTerm: string = '';
 
+  constructor(private route: ActivatedRoute) { }
+
+  ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.searchTerm = params['q'];
+    });
+  }
 }

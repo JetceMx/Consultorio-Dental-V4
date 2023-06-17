@@ -31,12 +31,12 @@
                     <a class="nav-link" routerLinkActive="active" [routerLink]="['preguntas']">Preguntas Frecuentes</a>
                 </li>
             </ul>
-            <form class="d-flex" role="search">
-                <input type="text" class="form-control text-center" name="filterPost" placeholder="Search..."
-                    [(ngModel)]="parametro">
-                <button class="btn btn-outline-success" (click)="Buscar()">Buscar</button>
+            <form class="d-flex" role="search" (ngSubmit)="search()">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" name="searchTerm">
+                <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-            <button (click)="onClick()" class="btn btn-outline-danger">Logout</button>
+           
+            
         </div>
     </div>
 </nav>
