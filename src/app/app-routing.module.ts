@@ -32,8 +32,9 @@ const routes: Routes = [
   { path: 'Cuenta/loginT', component: LoginTComponent },
   {path:  'busqueda', component: BusquedaComponent},
   { path: 'loading', component:LoadingComponent}, //Ruta para acomodar el loading, espero no olvidar borrarla
-  { path: '**', component: Error404Component },
-  { path: 'preguntas', component: PreguntasComponent }
+  { path: 'preguntas', component: PreguntasComponent },
+  { path: '**', component: Error404Component }
+  
 ];
 
 @NgModule({
