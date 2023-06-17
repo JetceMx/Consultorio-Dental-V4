@@ -44,6 +44,7 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 import { LoadingComponent } from './loading/loading.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { MatExpansionModule } from '@angular/material/expansion';
 
 
 @NgModule({
@@ -78,6 +79,7 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
     MatButtonModule,
     MatGridListModule,
     MatMenuModule,
+    MatExpansionModule,
     HttpClientModule,
     FormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),

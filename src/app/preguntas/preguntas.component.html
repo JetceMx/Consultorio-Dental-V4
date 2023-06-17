@@ -1,68 +1,12 @@
 <body>
   <h1>Resultado de búsqueda: {{ searchTerm }}</h1>
-    <h2>Preguntas Frecuentes</h2>
-    <div class="accordion" id="accordionExample">
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              ¿Cuentan con servicios gratuitos?
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-                <p>Lamentos informar que nuestros servicios ofrecidos <strong>No son Gratuitos</strong> y cada uno de ellos tiene un costo  </p>
-               
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              ¿Cual es la duracion de cada Consulta?
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              Cada consulta varia en tiempos ya que esto depende de lo que deba llevarse a cabo
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              ¿Puedo tener un rembolso de mi dinero si no estoy satisfecho con mi trabajo?
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <p>Lamentablemente no ofrecemos rembolsos de dinero, pero segun sea el problema podemos volver a realizar la cita sin ningun costo</p>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                ¿Por que deberia de conciderarlos como una opcion?
-              </button>
-            </h2>
-            <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>Contamos con los mejores especialistas en el area de medicina por lo que insistimos en acudir a nuestro consulorio si tienes un problema dental.</p>
-                <p>No hay ninguna duda de que sabremos como solucionar tu problema :D</p>
-              </div>
-            </div>
-          </div>
-        <div class="accordion-item">
-            <h2 class="accordion-header">
-              <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                ¿Como puedo contactarlos?
-              </button>
-            </h2>
-            <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
-              <div class="accordion-body">
-                <p>La forma mas facil de recibir respuesta es a nuestro correo: <strong>blog.isc22@gmail.com</strong> </p>
-              </div>
-            </div>
-          </div>
-      </div>
+  <h2>Preguntas Frecuentes</h2>
+<mat-accordion>
+  <mat-expansion-panel *ngFor="let pregunta of preguntas" [expanded]="pregunta.title.toLowerCase().includes(searchTerm.toLowerCase())">
+    <mat-expansion-panel-header>
+      {{ pregunta.title }}
+    </mat-expansion-panel-header>
+    <p>{{ pregunta.content }}</p>
+  </mat-expansion-panel>
+</mat-accordion>
 </body>
