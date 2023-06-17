@@ -52,6 +52,7 @@ export class RegisterComponent {
         let id1 = response.user.uid;
         console.log(response.user.uid)
         await setDoc(doc(this.firestore, ruta, id1), this.formularioRegistro);
+        this.alerta.success("Cuenta registrada!");
         this.router.navigate(['Cuenta/loginE']);
       })
       .catch(error => console.log(error));
