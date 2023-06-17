@@ -60,7 +60,7 @@
         <div class="form-group row">
             <label class="col-2 col-form-label">Correo</label>
             <div class="col-8">
-                <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text" placeholder="example@gmail.com" formControlName="correo" name="email" ngModel>
+                <input class="form-control" [ngClass]="{'is-invalid':!forma.get('correo')?.valid }" type="text" placeholder="example@gmail.com" formControlName="correo" name="correo" ngModel>
                 <div *ngIf="forma.controls['correo'].errors?.['required']" class="invalidfeedback">
                     Correo obligatorio
                 </div>
@@ -150,6 +150,10 @@
         </div>
 
     </div>
+
+    <div *ngIf="mensajeEnviado" class="custom-alert">
+      El mensaje ha sido enviado correctamente.
+  </div>
 
 </form>
 <br>

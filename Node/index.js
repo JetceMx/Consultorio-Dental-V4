@@ -13,7 +13,7 @@ app.post('/contacto', (req, res) => {
     res.status(200).send();
 })
 
-app.post('/info', (req, res) =>{
+app.post('/citas/agendar', (req, res) =>{
   configCita(req.body);
   res.status(200).send();
 })

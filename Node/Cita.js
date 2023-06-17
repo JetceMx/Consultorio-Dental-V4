@@ -5,13 +5,13 @@ module.exports = (formulario) => {
         service: 'gmail',
         auth: {
             user: 'blog.isc22@gmail.com', // Cambialo por tu email
-            pass: 'ezuhggaggoutehem' // Cambialo por tu password
+            pass: 'evmovlraujvsugry' // Cambialo por tu password
         }
     });
 
     const mailOptions = {
         from: 'blog.isc22@gmail.com',
-        to: `${formulario.email}`, // Cambia esta parte por el destinatario
+        to: `"${formulario.correo}"`, // Cambia esta parte por el destinatario
         subject: 'Nuevo correo del usuario',
         html: `
     <p>El usuario <strong>${formulario.nombre}</strong> ah soliciatado una consulta</p>
