@@ -1,4 +1,14 @@
-body{
+body {
     justify-content: center;
     text-align: center;
+}
+
+.contenedor-preguntas {
+    margin: 0 auto;
+    width: 80%;
+    min-height: calc(60vh - 70px);
+}
+
+h2 {
+    color: #0D6EFD;
 }

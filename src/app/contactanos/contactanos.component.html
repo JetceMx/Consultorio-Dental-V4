@@ -1,19 +1,28 @@
-<div class="container mt-5">
-    <h2 class="custom-heading">Formulario de contacto</h2>
+<div class="contenedor-contactanos">
     <form class="custom-form" (ngSubmit)="contactForm(form.value)" #form="ngForm">
-        <div class="form-group">
-            <label class="custom-label">Nombre</label>
-            <input type="text" class="custom-input" name="nombre" ngModel>
+        <br>
+        <h2 class="custom-heading text-center">Formulario de contacto</h2>
+        <div class="container">
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Nombre</label>
+                <div class="col-9">
+                    <input type="text" class="form-control" name="nombre" ngModel>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Correo</label>
+                <div class="col-9">
+                    <input type="email" class="form-control" name="email" ngModel>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label class="col-2 col-form-label">Mensaje</label>
+                <div class="col-9">
+                    <textarea class="form-control" name="mensaje" ngModel></textarea>
+                </div>
+            </div>
+            <button type="submit" class="btnEnviar">Enviar</button>
         </div>
-        <div class="form-group">
-            <label class="custom-label">E-mail</label>
-            <input type="email" class="custom-input" name="email" ngModel>
-        </div>
-        <div class="form-group">
-            <label class="custom-label">Mensaje</label>
-            <textarea class="custom-textarea" cols="3" rows="6" name="mensaje" ngModel></textarea>
-        </div>
-        <button type="submit" class="custom-button">Enviar</button>
     </form>
     <div *ngIf="mensajeEnviado" class="custom-alert">
         El mensaje ha sido enviado correctamente.

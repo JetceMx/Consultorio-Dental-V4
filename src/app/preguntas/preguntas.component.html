@@ -1,12 +1,15 @@
 <body>
-  <h1>Resultado de búsqueda: {{ searchTerm }}</h1>
-  <h2>Preguntas Frecuentes</h2>
-<mat-accordion>
-  <mat-expansion-panel *ngFor="let pregunta of preguntas" [expanded]="pregunta.title.toLowerCase().includes(searchTerm.toLowerCase())">
-    <mat-expansion-panel-header>
-      {{ pregunta.title }}
-    </mat-expansion-panel-header>
-    <p>{{ pregunta.content }}</p>
-  </mat-expansion-panel>
-</mat-accordion>
+  <div class="contenedor-preguntas">
+    <br>
+    <h2 class="text-center">Preguntas Frecuentes</h2>
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let pregunta of preguntas"
+        [expanded]="pregunta.title.toLowerCase().includes(searchTerm.toLowerCase())">
+        <mat-expansion-panel-header>
+          {{ pregunta.title }}
+        </mat-expansion-panel-header>
+        <p>{{ pregunta.content }}</p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </body>

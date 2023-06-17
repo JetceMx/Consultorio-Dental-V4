@@ -32,11 +32,12 @@
                 </li>
             </ul>
             <form class="d-flex" role="search" (ngSubmit)="search()">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm" name="searchTerm">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"
+                    [(ngModel)]="searchTerm" name="searchTerm">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
-           
-            
+            <button (click)="onClick()" class="btn btn-outline-danger">Logout</button>
+
         </div>
     </div>
 </nav>

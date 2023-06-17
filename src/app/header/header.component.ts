@@ -13,16 +13,24 @@ import { LocalCitasService } from '../citas/local-citas.service';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-  
+
   searchTerm: string = '';
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private userService: UsuariosService, private citasService: LocalCitasService) { }
 
   search() {
     if (this.searchTerm) {
       this.router.navigate(['/preguntas'], { queryParams: { q: this.searchTerm } });
     }
     console.log("parametro enviado:" + this.searchTerm)
+  }
+
+  onClick() {
+    this.userService.logout()
+      .then(() => {
+        this.router.navigate(['Cuenta/regisE']);
+      })
+      .catch(error => console.log(error));
   }
 }
 
