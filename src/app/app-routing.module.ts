@@ -14,6 +14,7 @@ import { LoginComponent } from './cuenta/login/login.component';
 import { LoginTComponent } from './cuenta/login-t/login-t.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { LoadingComponent } from './loading/loading.component';
+import { PreguntasComponent } from './preguntas/preguntas.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/inicio', pathMatch: 'full' },
@@ -31,7 +32,8 @@ const routes: Routes = [
   { path: 'Cuenta/loginT', component: LoginTComponent },
   {path:  'busqueda', component: BusquedaComponent},
   { path: 'loading', component:LoadingComponent}, //Ruta para acomodar el loading, espero no olvidar borrarla
-  { path: '**', component: Error404Component }
+  { path: '**', component: Error404Component },
+  { path: 'preguntas', component: PreguntasComponent }
 ];
 
 @NgModule({

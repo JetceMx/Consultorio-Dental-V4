@@ -43,6 +43,7 @@ import { LoginTComponent } from './cuenta/login-t/login-t.component';
 import { BusquedaComponent } from './busqueda/busqueda.component';
 import { LoadingComponent } from './loading/loading.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { PreguntasComponent } from './preguntas/preguntas.component';
 
 
 @NgModule({
@@ -62,7 +63,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     FiltroPipe,
     Error404Component,
     PadreComponent,
-    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent, BusquedaComponent, LoadingComponent
+    HijoComponent, LoginComponent, MainComponent, RegisterComponent, CuentaComponent, LoginTComponent, BusquedaComponent, LoadingComponent, PreguntasComponent
   ],
   imports: [
     BrowserModule,
