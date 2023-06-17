@@ -25,8 +25,9 @@ export class RegisterComponent {
 
   constructor(private alerta: AlertifyService, private userService: UsuariosService, private router: Router, private formBuilder: FormBuilder, private firestore: Firestore) {
     this.formReg = this.formBuilder.group({
-      nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
-      correo: new FormControl('', [Validators.required, Validators.email]),
+      name: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      lastname: new FormControl('', [Validators.required, Validators.minLength(3)]),
+      email: new FormControl('', [Validators.required, Validators.email]),
       password: new FormControl('', [Validators.required, Validators.minLength(8)]),
       passwordVer: new FormControl('', [Validators.required,])
     }, { validators: this.passwordMatchValidator })
