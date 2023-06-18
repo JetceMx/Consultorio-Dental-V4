@@ -9,7 +9,7 @@ export class CitaService {
 
   constructor(private _http: HttpClient) { }
   sendMessage(body: any) {
-    return this._http.post('http://localhost:3000/citas/agendar', body);
+    return this._http.post('https://backend-consultorio.onrender.com/citas/agendar', body);
   }
 
 }
